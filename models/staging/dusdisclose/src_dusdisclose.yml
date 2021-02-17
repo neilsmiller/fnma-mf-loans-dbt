@@ -2,6 +2,9 @@ version: 2
 
 sources:
   - name: dusdisclose
+    description: >
+      Table with all characteristics about all Fannie Mae Green Loans. Exported from 
+      Fannie Mae's DUS Disclose data system and loaded into BigQuery memory.
     schema: fnma_mf_loans
     tables:
       - name: green_mbs
