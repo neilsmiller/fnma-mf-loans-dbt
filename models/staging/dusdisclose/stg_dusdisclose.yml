@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: stg_dusdisclose__loans
+    description: This table contains data about the loans given related to Fannie Mae's Green bonds
+    columns:
+      - name: Loan_Number
+        description: A unique number assigned to each mortgage loan by Fannie Mae.
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_dusdisclose__properties
+    description: This table contains data about the properties that serve as collateral for a Fannie Mae Green multifamily loan
+    columns:
+      - name: property_id
+        description: A unique number assigned by Fannie Mae to each property that is collateral for a mortgage loan.
+        tests:
+          - unique
+          - not_null
+      - name: Property_Specific_Property_Type
+        description: The specific type of the property securing the mortgage loan
+        tests:
+          - accepted_values:
+              values: ['Multifamily', 'Cooperative', 'Manufactured Housing', 
+              'Seniors', 'Dedicated Student', 'Other', 'Military']
+      - name: Loan_Number
+        description: UID for the loans table
+        tests:
+          - relationships:
+              to: ref('stg_dusdisclose__properties')
+              field: Loan_Number
+      - name: Property_Year_Built
+        description: > 
+          The year in which a mortgaged property (or the first phase of a 
+          multi‐phase mortgaged property) was built
