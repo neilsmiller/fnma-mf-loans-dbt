@@ -33,6 +33,6 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   fnma_loans:
-      # Applies to all files under models/example/
+      # Applies to all files under models/staging/
       staging:
           materialized: view

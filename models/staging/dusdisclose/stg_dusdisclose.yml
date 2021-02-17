@@ -28,7 +28,7 @@ models:
         description: UID for the loans table
         tests:
           - relationships:
-              to: ref('stg_dusdisclose__properties')
+              to: ref('stg_dusdisclose__loans')
               field: Loan_Number
       - name: Property_Year_Built
         description: > 
