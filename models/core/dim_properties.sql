@@ -90,7 +90,7 @@ WITH
     MAX(Property_3rd_Preceding_Year_NCF____) AS Property_3rd_Preceding_Year_NCF____,
     MAX(Property_3rd_Preceding_Year_Physical_Occupancy____) AS Property_3rd_Preceding_Year_Physical_Occupancy____
   FROM
-     {{ source ('dusdisclose', 'green_mbs')}}
+     {{ ref('stg_dusdisclose') }}
   GROUP BY
     property_id)
 SELECT

@@ -43,4 +43,4 @@ SELECT
   Loan_Total_Scheduled_P_I_Due_____
 
   FROM
-     {{ source ('dusdisclose', 'green_mbs')}}
+     {{ ref ('stg_dusdisclose')}}
