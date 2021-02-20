@@ -78,7 +78,7 @@ WITH
     Property_2nd_Preceding_Year_NCF____,
     Property_2nd_Preceding_Year_Physical_Occupancy____,
   FROM
-    {{ source ('dusdisclose', 'green_mbs')}}),
+    {{ ref('stg_dusdisclose') }}),
   duplicate_columns AS (
   SELECT
     property_id,
