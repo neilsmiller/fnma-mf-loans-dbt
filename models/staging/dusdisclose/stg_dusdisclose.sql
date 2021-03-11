@@ -8,7 +8,9 @@
 
       SELECT * EXCEPT(Property_Zip_Code, Property_City),
       INITCAP(Property_City) AS Property_City,
-      LPAD(CAST(Property_Zip_Code AS STRING), 5, "0") FROM source
+      LPAD(CAST(Property_Zip_Code AS STRING), 5, "0") AS Property_Zip_Code
+      
+      FROM source
 
   )
 
